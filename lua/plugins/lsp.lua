@@ -5,6 +5,8 @@ return {
 		'VonHeikemen/lsp-zero.nvim', branch = 'v3.x',
 		config = function()
 			local lsp_zero = require('lsp-zero')
+			lsp_zero.extend_lspconfig()
+			require("luasnip.loaders.from_vscode").lazy_load()
 
 			lsp_zero.on_attach(function(client, bufnr)
 				-- see :help lsp-zero-keybindings

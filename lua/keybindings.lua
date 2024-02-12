@@ -10,3 +10,5 @@ keyset("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>")
 keyset("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>")
 keyset("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>")
 
+-- NeoTree Keymappings
+keyset("n", "<C-t>", "<cmd>Neotree<cr>", {noremap = true})
