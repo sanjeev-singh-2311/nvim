@@ -1,18 +1,12 @@
 return {
+	{'neovim/nvim-lspconfig',},
+	{'hrsh7th/cmp-nvim-lsp',},
+	{'hrsh7th/cmp-buffer',},
+	{'hrsh7th/cmp-path',},
+	{'hrsh7th/cmp-cmdline',},
+
 	{
-		'L3MON4D3/LuaSnip',
-		dependencies = {
-			'saadparwaiz1/cmp_luasnip',
-			"rafamadriz/friendly-snippets"
-		},
-		config = function ()
-			require("luasnip.loaders.from_vscode").load {
-				exclude = {  },
-			}
-		end,
-	},
-	{
-		"hrsh7th/nvim-cmp",
+		'hrsh7th/nvim-cmp',
 		config = function ()
 			local cmp = require('cmp')
 			local cmp_action = require('lsp-zero').cmp_action()
@@ -34,6 +28,7 @@ return {
 					['<C-d>'] = cmp.mapping.scroll_docs(4),
 				})
 			})
+
 		end
-	}
+	},
 }
