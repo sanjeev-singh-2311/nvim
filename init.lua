@@ -22,7 +22,6 @@ vim.opt.autoindent = true
 -- Formatting
 vim.cmd("filetype plugin indent on")
 vim.cmd("syntax on")
-vim.g.mapleader = " "
 
 
 -- Load Lazy.nvim here

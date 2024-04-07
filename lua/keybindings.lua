@@ -1,5 +1,6 @@
 -- local variables
 local keyset = vim.keymap.set
+vim.g.mapleader = " "
 
 -- File Tree keymap
 keyset("n", "<leader>pv", vim.cmd.Ex)
