@@ -18,6 +18,9 @@ require("config.lazy")
 -- the config that comes after all plugins are installed
 vim.cmd("colorscheme kanagawa")
 
+-- package specific command
+vim.cmd("TransparentDisable")
+
 -- package specific keybindings
 vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>")
 vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<CR>")
@@ -25,6 +28,7 @@ vim.keymap.set("n", "<leader>fw", "<cmd>Pick grep_live<CR>")
 vim.keymap.set("n", "<leader>fh", "<cmd>Pick help<CR>")
 vim.keymap.set("n", "<leader>fr", "<cmd>Pick resume<CR>")
 vim.keymap.set("n", "<leader>fb", "<cmd>Pick buffers<CR>")
+vim.keymap.set("n", "<leader>uT", "<cmd>TransparentToggle<CR>")
 
 -- lsp setup
 -- Create a file named `installed_lsp_servers.lua` in lua/ directory and put all 
