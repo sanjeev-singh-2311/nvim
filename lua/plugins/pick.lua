@@ -1,4 +1,9 @@
 return {
     "echasnovski/mini.pick",
-    opts = {}
+    opts = {
+	mappings = {
+	    move_up = '<M-k>',
+	    move_down = '<M-j>',
+	}
+    }
 }
