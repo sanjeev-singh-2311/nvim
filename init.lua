@@ -3,6 +3,7 @@ vim.o.relativenumber = true
 vim.o.shiftwidth = 4
 vim.g.mapleader = " "
 vim.g.localleader = "\\"
+vim.o.clipboard = "unnamed,unnamedplus"
 
 -- common keybindings
 vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
@@ -31,12 +32,12 @@ vim.keymap.set("n", "<leader>fb", "<cmd>Pick buffers<CR>")
 vim.keymap.set("n", "<leader>uT", "<cmd>TransparentToggle<CR>")
 
 -- lsp setup
--- Create a file named `installed_lsp_servers.lua` in lua/ directory and put all 
--- your locally installed lsps there in a table format like 
+-- Create a file named `installed_lsp_servers.lua` in lua/ directory and put all
+-- your locally installed lsps there in a table format like
 -- ```
 -- return { "lua_ls", "clangd", "pyright" }
 -- ```
--- the file is listed in gitignore 
+-- the file is listed in gitignore
 local installed_lsps = require("installed_lsp_servers")
 vim.lsp.enable(installed_lsps)
 vim.diagnostic.config({
@@ -49,3 +50,5 @@ vim.keymap.set("n", "<leader>bf", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename)
 vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action)
 vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action)
+vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
