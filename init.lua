@@ -44,4 +44,8 @@ vim.diagnostic.config({
 		current_line = true,
 	},
 })
+-- lsp keymaps
 vim.keymap.set("n", "<leader>bf", vim.lsp.buf.format)
+vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename)
+vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action)
+vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action)
