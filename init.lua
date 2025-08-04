@@ -32,13 +32,13 @@ vim.keymap.set("n", "<leader>fb", "<cmd>Pick buffers<CR>")
 vim.keymap.set("n", "<leader>uT", "<cmd>TransparentToggle<CR>")
 
 -- lsp setup
--- Create a file named `installed_lsp_servers.lua` in lua/ directory and put all
+-- Create a file named `installed_lsp_servers.lua` in lua/config directory and put all
 -- your locally installed lsps there in a table format like
 -- ```
 -- return { "lua_ls", "clangd", "pyright" }
 -- ```
 -- the file is listed in gitignore
-local installed_lsps = require("installed_lsp_servers")
+local installed_lsps = require("config.installed_lsp_servers")
 vim.lsp.enable(installed_lsps)
 vim.diagnostic.config({
 	virtual_lines = {
