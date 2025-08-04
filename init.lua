@@ -2,6 +2,7 @@ vim.o.number = true
 vim.o.relativenumber = true
 vim.o.shiftwidth = 4
 vim.g.mapleader = " "
+vim.o.linebreak = true
 vim.g.localleader = "\\"
 vim.o.clipboard = "unnamed,unnamedplus"
 
