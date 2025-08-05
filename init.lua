@@ -4,6 +4,8 @@ vim.o.winborder = "rounded"
 vim.o.shiftwidth = 4
 vim.g.mapleader = " "
 vim.o.linebreak = true
+vim.o.autoindent = true
+vim.o.smartindent = true
 vim.g.localleader = "\\"
 vim.o.clipboard = "unnamed,unnamedplus"
 
