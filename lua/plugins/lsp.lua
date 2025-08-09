@@ -1,42 +1,50 @@
 return {
-    -- nvim-lspconfig
     {
 	"neovim/nvim-lspconfig"
     },
-    
     {
-	"hrsh7th/nvim-cmp",
-	dependencies = {
-	    "hrsh7th/cmp-nvim-lsp",
-	    "hrsh7th/cmp-vsnip",
-	    "hrsh7th/cmp-buffer",
-	    "hrsh7th/cmp-path",
-	    "hrsh7th/cmp-cmdline",
-	    "hrsh7th/vim-vsnip",
-	    "onsails/lspkind.nvim"
-	},
-	opts = function()
-	    local cmp = require("cmp")
-	    return {
-		snippet = {
-		    expand = function(args)
-			vim.fn["vsnip#anonymous"](args.body) -- For `vim-vsnip`
-		    end,
-		},
-		mapping = cmp.mapping.preset.insert({
-		    ["<C-Space>"] = cmp.mapping.complete(),      -- Trigger completion
-		    ["<CR>"] = cmp.mapping.confirm({ select = true }), -- Confirm selection
-		    ["<Tab>"] = cmp.mapping.select_next_item(),  -- Navigate completions
-		    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
-		}),
-		sources = cmp.config.sources({
-		    { name = "nvim_lsp" }, -- LSP completions
-		    { name = "vsnip" }, -- Snippets
-		    { name = "buffer" }, -- Current buffer words
-		    { name = "path" }, -- hopefully paths work after this
-		}),
-	    }
-	end,
-    }
+	'saghen/blink.cmp',
+	dependencies = { 'rafamadriz/friendly-snippets' },
 
+	version = '1.*',
+
+	opts = {
+	    keymap = {
+		preset = 'none',
+
+		['<S-Tab>'] = { 'select_prev', 'fallback' },
+		['<Tab>'] = { 'select_next', 'fallback' },
+		['<C-p>'] = { 'select_prev', 'fallback' },
+		['<C-n>'] = { 'select_next', 'fallback' },
+		['<M-k>'] = { 'select_prev', 'fallback' },
+		['<M-j>'] = { 'select_next', 'fallback' },
+
+		['<Up>'] = { 'scroll_documentation_up', 'fallback' },
+		['<Down>'] = { 'scroll_documentation_down', 'fallback' },
+
+		['<M-q>'] = { 'cancel', 'fallback' },
+		['<CR>'] = { 'accept', 'fallback' },
+		['<M-s>'] = { 'show', 'show_documentation', 'hide_documentation' },
+		['<C-e>'] = { 'hide', 'fallback' },
+	    },
+
+	    appearance = {
+		nerd_font_variant = 'mono'
+	    },
+
+	    completion = {
+		documentation = {
+		    auto_show = true,
+		    auto_show_delay_ms = 500
+		},
+	    },
+
+	    sources = {
+		default = { 'lsp', 'path', 'snippets', 'buffer' },
+	    },
+
+	    fuzzy = { implementation = "prefer_rust_with_warning" },
+	},
+	opts_extend = { "sources.default" }
+    }
 }
