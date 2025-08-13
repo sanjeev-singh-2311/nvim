@@ -49,6 +49,8 @@ vim.diagnostic.config({
 		current_line = true,
 	},
 })
+-- treesitter fold
+require("config.folds").setup()
 -- lsp keymaps
 vim.keymap.set("n", "<leader>bf", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename)
