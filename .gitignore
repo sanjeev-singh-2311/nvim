@@ -1,1 +1,2 @@
 lua/config/installed_lsp_servers.lua
+lua/config/user_config.lua

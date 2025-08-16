@@ -23,9 +23,6 @@ require("config.lazy")
 -- the config that comes after all plugins are installed
 vim.cmd("colorscheme kanagawa")
 
--- package specific command
-vim.cmd("TransparentDisable")
-
 -- package specific keybindings
 vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>")
 vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<CR>")
@@ -51,6 +48,7 @@ vim.diagnostic.config({
 })
 -- treesitter fold
 require("config.folds").setup()
+
 -- lsp keymaps
 vim.keymap.set("n", "<leader>bf", vim.lsp.buf.format)
 vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename)
@@ -59,3 +57,8 @@ vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action)
 vim.keymap.set("n", "gd", vim.lsp.buf.definition)
 vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
 vim.keymap.set("n", "gl", vim.diagnostic.open_float)
+
+-- user specific config
+-- put in the gitignored file `./lua/config/user_config.lua`
+-- make sure it is at the bottom to override any init.lua configs
+require("config.user_config").setup()
