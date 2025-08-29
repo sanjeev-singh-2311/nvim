@@ -24,7 +24,7 @@ return {
 
 		['<M-q>'] = { 'cancel', 'fallback' },
 		['<CR>'] = { 'accept', 'fallback' },
-		['<M-s>'] = { 'show', 'show_documentation', 'hide_documentation' },
+		['<M-s>'] = { 'show_and_insert', 'show_documentation', 'hide_documentation' },
 		['<C-e>'] = { 'hide', 'fallback' },
 	    },
 
