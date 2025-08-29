@@ -10,12 +10,12 @@ vim.g.localleader = "\\"
 vim.o.clipboard = "unnamed,unnamedplus"
 
 -- common keybindings
-vim.keymap.set("n", "<leader>w", "<cmd>w<CR>")
-vim.keymap.set("n", "<C-w>", "<cmd>wa<CR>")
-vim.keymap.set("n", "<leader>q", "<cmd>q<CR>")
-vim.keymap.set("n", "<C-q>", "<cmd>q!<CR>")
-vim.keymap.set("n", "<leader>c", "<cmd>bd<CR>")
-vim.keymap.set("n", "<C-c>", "<cmd>bd!<CR>")
+vim.keymap.set("n", "<leader>w", ":w<CR>")
+vim.keymap.set("n", "<C-w>", ":wa<CR>")
+vim.keymap.set("n", "<leader>q", ":q<CR>")
+vim.keymap.set("n", "<C-q>", ":q!<CR>")
+vim.keymap.set("n", "<leader>c", ":bd<CR>")
+vim.keymap.set("n", "<C-c>", ":bd!<CR>")
 
 -- require lazy along with all the packages
 require("config.lazy")
@@ -24,13 +24,14 @@ require("config.lazy")
 vim.cmd("colorscheme kanagawa")
 
 -- package specific keybindings
-vim.keymap.set("n", "<leader>e", "<cmd>Oil<CR>")
-vim.keymap.set("n", "<leader>ff", "<cmd>Pick files<CR>")
-vim.keymap.set("n", "<leader>fw", "<cmd>Pick grep_live<CR>")
-vim.keymap.set("n", "<leader>fh", "<cmd>Pick help<CR>")
-vim.keymap.set("n", "<leader>fr", "<cmd>Pick resume<CR>")
-vim.keymap.set("n", "<leader>fb", "<cmd>Pick buffers<CR>")
-vim.keymap.set("n", "<leader>uT", "<cmd>TransparentToggle<CR>")
+vim.keymap.set("n", "<leader>e", ":Oil<CR>")
+vim.keymap.set("n", "<leader>ff", ":Pick files<CR>")
+vim.keymap.set("n", "<leader>fw", ":Pick grep_live<CR>")
+vim.keymap.set("n", "<leader>fh", ":Pick help<CR>")
+vim.keymap.set("n", "<leader>fr", ":Pick resume<CR>")
+vim.keymap.set("n", "<leader>fb", ":Pick buffers<CR>")
+vim.keymap.set("n", "<leader>uT", ":TransparentToggle<CR>")
+vim.keymap.set("n", "<C-S>", ":LspInfo<CR>", { silent = true })
 
 -- lsp setup
 -- Create a file named `installed_lsp_servers.lua` in lua/config directory and put all
