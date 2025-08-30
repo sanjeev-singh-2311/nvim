@@ -1,5 +1,6 @@
 return {
     "echasnovski/mini.pick",
+    cmd = { "Pick" },
     dependencies = {
 	"echasnovski/mini.extra",
 	opts = {}

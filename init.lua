@@ -1,5 +1,6 @@
 vim.o.number = true
 vim.o.relativenumber = true
+vim.o.laststatus = 0 -- who even needs a statusline lmao
 vim.o.winborder = "rounded"
 vim.o.shiftwidth = 4
 vim.g.mapleader = " "

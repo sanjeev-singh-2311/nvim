@@ -1,5 +1,6 @@
 return {
     "max397574/better-escape.nvim",
+    event = { "BufReadPost", "BufNewFile" },
     opts = {
 	timeout = vim.o.timeoutlen, -- after `timeout` passes, you can press the escape key and the plugin will ignore it
 	default_mappings = false, -- setting this to false removes all the default mappings
