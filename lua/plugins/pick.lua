@@ -5,6 +5,14 @@ return {
 	"echasnovski/mini.extra",
 	opts = {}
     },
+    keys = {
+
+	{ "<leader>ff", ":Pick files<CR>", mode = { "n" }},
+	{ "<leader>fw", ":Pick grep_live<CR>", mode = { "n" }},
+	{ "<leader>fh", ":Pick help<CR>", mode = { "n" }},
+	{ "<leader>fr", ":Pick resume<CR>", mode = { "n" }},
+	{ "<leader>fb", ":Pick buffers<CR>", mode = { "n" }},
+    },
     opts = {
 	mappings = {
 	    move_up = '<M-k>',

@@ -26,11 +26,6 @@ vim.cmd("colorscheme kanagawa")
 
 -- package specific keybindings
 vim.keymap.set("n", "<leader>e", ":Oil<CR>")
-vim.keymap.set("n", "<leader>ff", ":Pick files<CR>")
-vim.keymap.set("n", "<leader>fw", ":Pick grep_live<CR>")
-vim.keymap.set("n", "<leader>fh", ":Pick help<CR>")
-vim.keymap.set("n", "<leader>fr", ":Pick resume<CR>")
-vim.keymap.set("n", "<leader>fb", ":Pick buffers<CR>")
 vim.keymap.set("n", "<leader>uT", ":TransparentToggle<CR>")
 
 -- treesitter fold
