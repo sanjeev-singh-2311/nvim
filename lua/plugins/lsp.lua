@@ -1,9 +1,65 @@
 return {
     {
-	"neovim/nvim-lspconfig"
+	"neovim/nvim-lspconfig",
+	event = { "BufReadPost", "BufNewFile" },
+	config = function ()
+	    -- lsp setup
+	    -- Create a file named `installed_lsp_servers.lua` in lua/config directory and put all
+	    -- your locally installed lsps there in a table format like
+	    -- ```
+	    -- return { "lua_ls", "clangd", "pyright" }
+	    -- ```
+	    -- the file is listed in gitignore
+	    local installed_lsps = require("config.installed_lsp_servers")
+	    vim.lsp.enable(installed_lsps)
+	    vim.api.nvim_create_autocmd("LspAttach", {
+		group = vim.api.nvim_create_augroup('setup-lsp-attach-thingies', { clear = true }),
+		callback = function (event)
+		    vim.diagnostic.config({
+			virtual_lines = {
+			    current_line = true,
+			},
+			severity_sort = true,
+			float = { border = 'rounded', source = 'if_many' },
+			underline = { severity = vim.diagnostic.severity.ERROR },
+			signs = {
+			    text = {
+				[vim.diagnostic.severity.ERROR] = '󰅚 ',
+				[vim.diagnostic.severity.WARN] = '󰀪 ',
+				[vim.diagnostic.severity.INFO] = '󰋽 ',
+				[vim.diagnostic.severity.HINT] = '󰌶 ',
+			    },
+			},
+			virtual_text = {
+			    source = 'if_many',
+			    spacing = 2,
+			    format = function(diagnostic)
+				local diagnostic_message = {
+				    [vim.diagnostic.severity.ERROR] = "ERR: " .. diagnostic.message,
+				    [vim.diagnostic.severity.WARN] = "WARN: " .. diagnostic.message,
+				    [vim.diagnostic.severity.INFO] = "INFO: " .. diagnostic.message,
+				    [vim.diagnostic.severity.HINT] = "HINT: " .. diagnostic.message,
+				}
+				return diagnostic_message[diagnostic.severity]
+			    end,
+			},
+
+		    })
+		    -- lsp keymaps
+		    vim.keymap.set("n", "<leader>bf", vim.lsp.buf.format)
+		    vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename)
+		    vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action)
+		    vim.keymap.set("n", "<leader>la", vim.lsp.buf.code_action)
+		    vim.keymap.set("n", "gd", vim.lsp.buf.definition)
+		    vim.keymap.set("n", "gD", vim.lsp.buf.declaration)
+		    vim.keymap.set("n", "gl", vim.diagnostic.open_float)
+		end
+	    })
+	end
     },
     {
 	'saghen/blink.cmp',
+	event = { "BufReadPre", "BufNewFile" },
 	dependencies = { 'rafamadriz/friendly-snippets' },
 
 	version = '1.*',
