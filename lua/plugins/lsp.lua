@@ -1,3 +1,13 @@
+-- Helper function for blink.cmp emacs behaviour
+local has_words_before = function()
+  local col = vim.api.nvim_win_get_cursor(0)[2]
+  if col == 0 then
+    return false
+  end
+  local line = vim.api.nvim_get_current_line()
+  return line:sub(col, col):match("%s") == nil
+end
+
 return {
     {
 	"neovim/nvim-lspconfig",
@@ -69,7 +79,14 @@ return {
 		preset = 'none',
 
 		['<S-Tab>'] = { 'select_prev', 'fallback' },
-		['<Tab>'] = { 'select_next', 'fallback' },
+		["<Tab>"] = {
+		    function(cmp)
+			if has_words_before() then
+			    return cmp.insert_next()
+			end
+		    end,
+		    'fallback'
+		},
 		['<C-p>'] = { 'select_prev', 'fallback' },
 		['<C-n>'] = { 'select_next', 'fallback' },
 		['<M-k>'] = { 'select_prev', 'fallback' },
@@ -89,6 +106,11 @@ return {
 	    },
 
 	    completion = {
+		menu = { enabled = true },
+		list = {
+		    selection = { preselect = false },
+		    cycle = { from_top = true }
+		},
 		documentation = {
 		    auto_show = true,
 		    auto_show_delay_ms = 500
