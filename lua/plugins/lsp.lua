@@ -1,7 +1,7 @@
 return {
     {
 	"neovim/nvim-lspconfig",
-	event = { "BufReadPost", "BufNewFile" },
+	event = { "BufReadPre", "BufNewFile" },
 	config = function ()
 	    -- lsp setup
 	    -- Create a file named `installed_lsp_servers.lua` in lua/config directory and put all

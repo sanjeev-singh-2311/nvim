@@ -6,7 +6,6 @@ return {
 	opts = {}
     },
     keys = {
-
 	{ "<leader>ff", ":Pick files<CR>", mode = { "n" }},
 	{ "<leader>fw", ":Pick grep_live<CR>", mode = { "n" }},
 	{ "<leader>fh", ":Pick help<CR>", mode = { "n" }},
