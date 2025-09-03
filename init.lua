@@ -9,6 +9,9 @@ vim.o.autoindent = true
 vim.o.smartindent = true
 vim.g.localleader = '\\'
 vim.o.clipboard = 'unnamed,unnamedplus'
+-- Preserve undo after closing file
+vim.opt.undodir = vim.fn.stdpath 'state' .. '/undo'
+vim.opt.undofile = true
 
 -- common keybindings
 vim.keymap.set('n', '<leader>w', ':w<CR>')
