@@ -1,4 +1,4 @@
 return {
-    "rebelot/kanagawa.nvim",
-    opts = {}
+  'rebelot/kanagawa.nvim',
+  opts = {},
 }

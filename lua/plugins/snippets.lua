@@ -1,30 +1,32 @@
 -- if true then return {} end
 
 return {
-  "garymjr/nvim-snippets",
-  dependencies = { "rafamadriz/friendly-snippets" },
+  'garymjr/nvim-snippets',
+  dependencies = { 'rafamadriz/friendly-snippets' },
   opts = { friendly_snippets = true },
   lazy = true,
   specs = {
-    { "L3MON4D3/LuaSnip", optional = true, enabled = true },
+    { 'L3MON4D3/LuaSnip', optional = true, enabled = true },
     {
-      "hrsh7th/nvim-cmp",
+      'hrsh7th/nvim-cmp',
       optional = true,
-      dependencies = { "garymjr/nvim-snippets" },
+      dependencies = { 'garymjr/nvim-snippets' },
       opts = function(_, opts)
-        if not opts.sources then opts.sources = {} end
-        table.insert(opts.sources, { name = "snippets", priority = 750 })
+        if not opts.sources then
+          opts.sources = {}
+        end
+        table.insert(opts.sources, { name = 'snippets', priority = 750 })
       end,
     },
     {
-      "Saghen/blink.cmp",
+      'Saghen/blink.cmp',
       optional = true,
-      opts = { snippets = { preset = "default" } },
+      opts = { snippets = { preset = 'default' } },
     },
     {
-      "danymat/neogen",
+      'danymat/neogen',
       optional = true,
-      opts = { snippet_engine = "nvim" },
+      opts = { snippet_engine = 'nvim' },
     },
   },
 }
