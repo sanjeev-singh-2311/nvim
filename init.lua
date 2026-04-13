@@ -29,3 +29,8 @@ vim.keymap.set('n', '<leader>r', ':restart<CR>')
 local kanagawa = require('plugins.kanagawa').load()
 local oil_nvim = require('plugins.oil').load()
 local autopairs = require('plugins.autopairs').load()
+local blink = require('plugins.lsp').load()
+local fidget = require('plugins.fidget').load()
+
+-- load user configs at the very end
+require('config.user_config').setup()
