@@ -1,6 +1,6 @@
 vim.o.number = true
 vim.o.relativenumber = true
--- vim.o.laststatus = 0 -- who even needs a statusline lmao
+vim.o.laststatus = 0 -- who even needs a statusline lmao
 vim.o.winborder = 'rounded'
 vim.o.shiftwidth = 4
 vim.o.smartindent = false
@@ -25,5 +25,7 @@ vim.keymap.set('n', '<leader>c', ':bd<CR>')
 vim.keymap.set('n', '<C-c>', ':bd!<CR>')
 vim.keymap.set('n', '<leader>r', ':restart<CR>')
 
+-- load plugins
 local kanagawa = require('plugins.kanagawa').load()
 local oil_nvim = require('plugins.oil').load()
+local autopairs = require('plugins.autopairs').load()
