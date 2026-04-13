@@ -8,8 +8,8 @@ return {
       enable = true,
     },
     indent = {
-	enable = true
-    }
+      enable = true,
+    },
   },
   config = function(_, opts)
     require('nvim-treesitter.configs').setup(opts)
