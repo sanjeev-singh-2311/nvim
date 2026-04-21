@@ -58,6 +58,7 @@ local fidget = require('plugins.fidget').load()
 local render_md = require('plugins.markdown').load()
 local gitsigns = require('plugins.gitsigns').load()
 local pick = require('plugins.pick').load()
+local ts = require('plugins.treesitter').load()
 
 -- load user configs at the very end
 require('config.user_config').setup()
