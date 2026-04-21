@@ -56,6 +56,8 @@ local autopairs = require('plugins.autopairs').load()
 local blink = require('plugins.lsp').load()
 local fidget = require('plugins.fidget').load()
 local render_md = require('plugins.markdown').load()
+local gitsigns = require('plugins.gitsigns').load()
+local pick = require('plugins.pick').load()
 
 -- load user configs at the very end
 require('config.user_config').setup()
