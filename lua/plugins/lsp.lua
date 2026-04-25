@@ -3,7 +3,7 @@ local M = {}
 M.load = function()
   vim.pack.add {
     { src = 'https://github.com/neovim/nvim-lspconfig', name = 'lspconfig' },
-    { src = 'https://github.com/Saghen/blink.cmp' },
+    { src = 'https://github.com/Saghen/blink.cmp', version = 'v1' },
     { src = 'https://github.com/sar/friendly-snippets.nvim' },
   }
 

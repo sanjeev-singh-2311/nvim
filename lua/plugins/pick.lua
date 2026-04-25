@@ -7,6 +7,7 @@ M.load = function()
   }
 
   local pick = require 'mini.pick'
+  require('mini.extra').setup()
   pick.setup {
     mappings = {
       move_up = '<M-k>',
